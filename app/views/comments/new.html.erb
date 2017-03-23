@@ -1,0 +1,21 @@
+<fieldset>
+	<section class="solidbody">
+		<legend> <%= set_subheader("Enter details for new Comment") %> </legend><br>
+		<%= form_for @comment_struct.comment, url: post_comments_path(@comment_struct.post.id) do |f| %>
+			<%= render "shared/common_error", object_argument: @comment_struct.comment %><br>
+			<b>Enter Comment Information</b>
+			<p></p>
+			<ul>				
+				<div class="row">
+					<div class="col-md-5">
+						<%= render 'form',f: f %>
+					</div>
+				</div>
+			</ul>
+			<p>
+				<%= link_to 'Cancel', post_comments_path(@comment_struct.post),class: "btn btn-default" %>
+				<%= f.submit "Save", class: "btn btn-success" %>
+			</p>
+		<% end %>			
+	</section>
+</fieldset>

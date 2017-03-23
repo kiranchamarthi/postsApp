@@ -1,0 +1,21 @@
+<fieldset>
+	<section class="solidbody">
+		<legend> <%= set_subheader("Enter details for new Post") %> </legend><br>
+		<%= form_for @post do |f| %>
+			 <%= render "shared/common_error", object_argument: @post %><br>
+   			 <b>Enter Post Information</b>
+   			 <p></p>
+   			 <ul>				
+				<div class="row">
+	          		<div class="col-md-5">
+						<%= render 'form',f: f %>
+					</div>
+				</div>
+			</ul>
+			<p>
+		    	<%= link_to 'Cancel', posts_path,class: "btn btn-default" %>
+		    	<%= f.submit "Save", class: "btn btn-success" %>
+		    </p>
+		<% end %>			
+	</section>
+</fieldset>

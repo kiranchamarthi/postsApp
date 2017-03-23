@@ -1,0 +1,15 @@
+<fieldset>
+	<section class="solidbody">
+		<legend><%= set_subheader("Comments") %></legend><br>
+		<%= render 'parent_post_partial', post: @comment_struct.post %><br>		
+		<% if @comment_struct.comments.present? %>				
+			<%= render "comments_table", comment_struct: @comment_struct %>
+		<%else%>
+				<p>
+					<h5 class="subheader">No comments to show.</h5>
+				</p>					
+		<%end%>
+		<%= link_to 'Back', posts_path,class: "btn btn-default" %>
+		<%= link_to 'New', new_post_comment_path, class: "btn btn-success"%>		
+	</section>
+</fieldset>

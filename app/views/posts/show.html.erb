@@ -1,0 +1,24 @@
+<fieldset>
+    <section class="solidbody">    
+
+    <legend>
+        <%= set_subheader("Post Information") %>
+    </legend><br>
+
+     <p>
+      <b>Title: </b>
+
+      <%= @post.title %>
+    </p>
+
+    <p>
+      <b>Body: </b>
+      <%= @post.body %>
+    </p>
+    <br>
+
+    <%= link_to 'Back', posts_path,class: "btn btn-default" %>
+    <%= link_to 'Edit', edit_post_path(@post),class: "btn btn-success" %>
+    <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger" %>
+    </section>
+</fieldset>

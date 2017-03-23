@@ -1,0 +1,17 @@
+<table  class="table table-striped table-bordered">
+	<caption class="fontc">
+	<%= "Comments" %>
+	<p> </p> </caption>
+	<thead>
+		<tr>
+			<td> <b>Body</b> </td>
+			<td> <b>Link</b> </td>
+		</tr>
+	</thead>
+	<% comment_struct.comments.each do |comment| %>
+	<tr>
+		<td> <%= comment.body %> </td>
+		<td> <%= link_to("Show", post_comment_path(comment_struct.post, comment), id: "hyperlink") %> </td>
+	</tr>
+	<% end %>
+</table>

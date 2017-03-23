@@ -1,0 +1,18 @@
+<fieldset>
+    <section class="solidbody">    
+
+    <legend>
+        <%= set_subheader("Post Information") %>
+    </legend><br>
+
+    <p>
+      <b>Body: </b>
+      <%= @comment_struct.comment.body %>
+    </p>
+    <br>
+
+    <%= link_to 'Back', post_comments_path(@comment_struct.post),class: "btn btn-default" %>
+    <%= link_to 'Edit', edit_post_comment_path(@comment_struct.post,@comment_struct.comment),class: "btn btn-success" %>
+    <%= link_to 'Delete', post_comment_path(@comment_struct.post,@comment_struct.comment), method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger" %>
+    </section>
+</fieldset>
